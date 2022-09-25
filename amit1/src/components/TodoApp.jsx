@@ -5,12 +5,20 @@ export const TodoApp = () => {
   const [items, setItems] = useState("");
 
   const addTodo = () => {
-    setTodo([...todo, items]);
-    setItems("");
     if(!items) {
         alert("Please enter valid todo");
+    } else {
+        setTodo([...todo, items]);
+        setItems("");
     }
   };
+
+  const editTodo = (idx) => {
+    let newTodo = prompt("Edit this todo");
+    const newTodos = [...todo]
+    newTodos[idx] = newTodo;
+    setTodo(newTodo);
+  }
 
   return (
     <>
@@ -33,7 +41,7 @@ export const TodoApp = () => {
             <div className="todoText">
               <span>{item}</span>
             </div>
-            <button id="editBtn">Edit</button>
+            <button id="editBtn" onClick = {editTodo}>Edit</button>
             <button
               id="deleteBtn"
               onClick={() => {
