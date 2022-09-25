@@ -3,7 +3,6 @@ import React, { useState } from "react";
 export const TodoApp = () => {
   const [todo, setTodo] = useState([]);
   const [items, setItems] = useState("");
-  const [edit, setEdit] = useState(true);
 
   const addTodo = () => {
     if(!items) {
@@ -14,8 +13,11 @@ export const TodoApp = () => {
     }
   };
 
-  const editTodo = () => {
-    setEdit(false);
+  const editTodo = (idx) => {
+    let newTodo = prompt("Edit your todo here")
+    const newTodos = [...todo]
+    newTodos[idx] = newTodo;
+    setTodo(newTodo);
   }
 
   return (
@@ -37,9 +39,9 @@ export const TodoApp = () => {
         {todo.map((item) => (
           <div className="todo">
             <div className="todoText">
-              <input readOnly={edit} >{item}</input>
+              <span>{item}</span>
             </div>
-            <button id="editBtn" onClick = {editTodo}>Edit</button>
+            <button id="editBtn" onClick={editTodo}>Edit</button>
             <button
               id="deleteBtn"
               onClick={() => {
