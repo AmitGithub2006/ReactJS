@@ -21,16 +21,51 @@ body {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     margin-top: 40px;
 }
 
-#input {
+#input, #addBtn {
     border: none;
     outline: none;
     padding: 10px;
     border-radius: 5px;
     font-size: 20px;
-    color: rgb(71, 143, 84);
+    color: rgb(140, 134, 196);
+    margin-bottom: 30px;
+}
+
+#addBtn {
+    background-color: darkolivegreen;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.todo {
+    margin-bottom: 10px;
+}
+
+.todo span {
+    font-size: 30px;
+    color: rgb(244, 248, 252);
+    max-width: 100px;
+}
+
+.todo button {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 0 5px;
+    color: rgb(235, 223, 217);
+    cursor: pointer;
+}
+
+.todo #editBtn {
+    background-color: teal;
+}
+
+.todo #deleteBtn {
+    background-color: tomato;
 }

@@ -22,12 +22,12 @@ export const TodoApp = () => {
           placeholder={"write your todo here..."}
           onChange={(e) => setItems(e.target.value)}
         />
-        <button onClick={addTodo}>add todo</button>
+        <button id="addBtn" onClick={addTodo}>add todo</button>
         {todo.map((item) => (
-          <div>
+          <div className="todo">
             <span>{item}</span>
-            <button>Edit</button>
-            <button
+            <button id="editBtn">Edit</button>
+            <button id="deleteBtn"
               onClick={() => {
                 let filteredtodo = todo.filter((value) => value !== item);
                 setTodo([...filteredtodo]);
