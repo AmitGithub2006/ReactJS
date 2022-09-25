@@ -45,10 +45,11 @@ body {
     margin-bottom: 10px;
 }
 
-.todo span {
+.todo .todoText {
     font-size: 30px;
     color: rgb(244, 248, 252);
-    max-width: 100px;
+    display: inline-block;
+    width: 350px;
 }
 
 .todo button {
