@@ -1,24 +1,36 @@
 import React, { useState } from "react";
 
-export const TodoApp = () => {
+export function TodoApp() {
   const [todo, setTodo] = useState([]);
   const [items, setItems] = useState("");
+  const [edit, setEdit] = useState(false);
+  const [editableIndex, setEditableIndex] = useState();
+  const [editedTodo, setEditedTodo] = useState("");
+  const [read, setRead] = useState(true);
 
   const addTodo = () => {
-    if(!items) {
-        alert("Please enter valid todo");
-    } else {
-        setTodo([...todo, items]);
-        setItems("");
+    if (!items) {
+      alert("Please enter a valid item");
+      return "";
     }
+    setTodo([...todo, items]);
+    setItems("");
   };
 
-  const editTodo = (idx) => {
-    let newTodo = prompt("Edit your todo here")
-    const newTodos = [...todo]
-    newTodos[idx] = newTodo;
-    setTodo(newTodo);
-  }
+  const editTodo = (index) => {
+    setEdit(true);
+    setEditableIndex(index);
+    setRead(false);
+  };
+
+  const saveTodo = (index) => {
+    const newTodos = [...todo];
+    newTodos[index] = editedTodo;
+    setTodo(newTodos);
+    setEdit(false);
+    setEditableIndex(-1);
+    setRead(true);
+  };
 
   return (
     <>
@@ -31,29 +43,60 @@ export const TodoApp = () => {
           id="input"
           value={items}
           placeholder={"write your todo here..."}
-          onChange={(e) => setItems(e.target.value)}
+          onChange={(e) => {
+            setItems(e.target.value);
+          }}
         />
         <button id="addBtn" onClick={addTodo}>
-          add todo
+          Add todo
         </button>
-        {todo.map((item) => (
-          <div className="todo">
-            <div className="todoText">
-              <span>{item}</span>
+        {todo.map((item, index) => {
+          return (
+            <div className="todo" key={item}>
+              {index === editableIndex && edit ? (
+                <div>
+                  <input
+                    type="text"
+                    defaultValue={item}
+                    onChange={(e) => {
+                      setEditedTodo(e.target.value);
+                      console.log(editedTodo);
+                    }}
+                  />
+                  <button id="saveBtn" onClick={() => saveTodo(index)}>
+                    Save
+                  </button>
+                  <button
+                    id="deleteBtn"
+                    onClick={() => {
+                      let filteredtodo = todo.filter((value) => value !== item);
+                      setTodo([...filteredtodo]);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              ) : (
+                <div>
+                  <input type="text" value={item} readOnly={read} />
+                  <button id="editBtn" onClick={() => editTodo(index)}>
+                    Edit
+                  </button>
+                  <button
+                    id="deleteBtn"
+                    onClick={() => {
+                      let filteredtodo = todo.filter((value) => value !== item);
+                      setTodo([...filteredtodo]);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              )}
             </div>
-            <button id="editBtn" onClick={editTodo}>Edit</button>
-            <button
-              id="deleteBtn"
-              onClick={() => {
-                let filteredtodo = todo.filter((value) => value !== item);
-                setTodo([...filteredtodo]);
-              }}
-            >
-              Delete
-            </button>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </>
   );
-};
+}

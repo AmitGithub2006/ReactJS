@@ -45,11 +45,21 @@ body {
     margin-bottom: 10px;
 }
 
-.todo .todoText {
+/* .todo .todoText {
     font-size: 30px;
     color: rgb(244, 248, 252);
     display: inline-block;
     width: 350px;
+} */
+
+.todo input {
+    font-size: 30px;
+    color: rgb(244, 248, 252);
+    display: inline-block;
+    width: 350px;
+    background-color: inherit;
+    border: none;
+    outline: none;
 }
 
 .todo button {
@@ -63,7 +73,7 @@ body {
     cursor: pointer;
 }
 
-.todo #editBtn {
+.todo #editBtn, .todo #saveBtn {
     background-color: teal;
 }
 
