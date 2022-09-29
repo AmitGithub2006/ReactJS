@@ -4,12 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { TodoApp } from "./components/TodoApp";
+// import Weather from "./components/Weather";
+import { Api } from "./components/Api";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <TodoApp />
+    {/* <TodoApp /> */}
+    {/* <Weather /> */}
+    <Api />
   </React.StrictMode>
 );
 
