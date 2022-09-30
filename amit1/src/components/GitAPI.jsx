@@ -1,52 +1,30 @@
-import React, { useState } from "react";
-const axios = require("axios").default;
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const GitAPI = () => {
-  const [city, setCity] = useState("");
-  const [weatherData, setWeatherData] = useState({});
+export function GitAPI() {
+  const [posts, setPosts] = useState([]);
+  const [id, setId] = useState(1);
+  const [btnId, setBtnId] = useState(1);
 
-  async function getWeatherData(userName) {
-    try {
-      const response = await axios.get(
-        "https://api.github.com/users/AmitGithub2006",
-        {
-          params: {
-            // key: "aa2efebe1c7b459a96e173040222809",
-            q: `${userName}`,
-            // aqi: "no",
-          },
-        }
-      );
-      console.log(response);
-      setWeatherData(response.data);
-    } 
-    catch (error) {
-      console.error(error);
-    }
-  }
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    getWeatherData(city);
-  };
+  useEffect(() => {
+    axios.get(`https://api.github.com/users/${id}`).then(
+      (response) => {
+        console.log(response);
+        setPosts(response.data);
+      },
+    );
+  }, [btnId])
 
   return (
-    <>
-      <input
-        placeholder="City Name"
-        onChange={(e) => setCity(e.target.value)}
-      />
-      <button onClick={handleClick}>Fetch</button>
-      {weatherData.location ? (
-        <>
-        <p>Name : {weatherData.name}</p>
-        <p>User : {weatherData.login}</p>
-        </>
-      ) : (
-        <p>Please enter city name.</p>
-      )}
-    </>
+    <div>
+      <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
+      <button onClick={() => setBtnId(id)}>click</button>
+      <h1>{posts.name}</h1>
+      <p>{posts.location}</p>
+      <img src={posts.avatar_url} alt="" height="200px" width="200px"/><br />
+      <a target="_blank" href={posts.html_url}>Click to check profile</a>
+    </div>
   );
-};
+}
 
-export default GitAPI;
+// export default GitAPI;

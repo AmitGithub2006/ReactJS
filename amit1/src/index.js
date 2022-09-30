@@ -3,21 +3,19 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { TodoApp } from "./components/TodoApp";
-// import Weather from "./components/Weather";
-import { Api } from "./components/Api";
-import Weather from "./components/Weather";
-import GitAPI from "./components/GitAPI";
+// import { TodoApp } from "./components/TodoApp";
+// import { Api } from "./components/Api";
+// import { Weather } from "./components/Weather";
+import { GitAPI } from "./components/GitAPI";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <TodoApp /> */}
+    {/* <Api /> */}
     {/* <Weather /> */}
-    <Api />
-    {/* <Weather /> */}
-    {/* <GitAPI /> */}
+    <GitAPI />
   </React.StrictMode>
 );
 

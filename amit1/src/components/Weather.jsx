@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const axios = require("axios").default;
 
-const Weather = () => {
+export const Weather = () => {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState({});
 
@@ -50,4 +50,4 @@ const Weather = () => {
   );
 };
 
-export default Weather;
+// export default Weather;
