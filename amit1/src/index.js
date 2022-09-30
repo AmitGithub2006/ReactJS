@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { TodoApp } from "./components/TodoApp";
 // import Weather from "./components/Weather";
 import { Api } from "./components/Api";
+import Weather from "./components/Weather";
+import GitAPI from "./components/GitAPI";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,6 +16,8 @@ root.render(
     {/* <TodoApp /> */}
     {/* <Weather /> */}
     <Api />
+    {/* <Weather /> */}
+    {/* <GitAPI /> */}
   </React.StrictMode>
 );
 
