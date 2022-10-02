@@ -5,6 +5,7 @@ export function GitAPI() {
   const [posts, setPosts] = useState([]);
   const [id, setId] = useState(1);
   const [btnId, setBtnId] = useState(1);
+  const [name, setName] = useState("");
 
   useEffect(() => {
     axios.get(`https://api.github.com/users/${id}`).then(
@@ -26,5 +27,3 @@ export function GitAPI() {
     </div>
   );
 }
-
-// export default GitAPI;

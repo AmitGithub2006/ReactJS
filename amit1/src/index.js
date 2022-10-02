@@ -4,9 +4,11 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 // import { TodoApp } from "./components/TodoApp";
-// import { Api } from "./components/Api";
+import { Api } from "./components/Api";
 // import { Weather } from "./components/Weather";
 import { GitAPI } from "./components/GitAPI";
+import { GitData } from "./components/GitData";
+import { Covid } from "./components/Covid";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +17,9 @@ root.render(
     {/* <TodoApp /> */}
     {/* <Api /> */}
     {/* <Weather /> */}
-    <GitAPI />
+    {/* <GitAPI /> */}
+    {/* <GitData /> */}
+    <Covid />
   </React.StrictMode>
 );
 

@@ -13,7 +13,6 @@ export const Weather = () => {
           params: {
             key: "aa2efebe1c7b459a96e173040222809",
             q: `${cityName}`,
-            // aqi: "no",
           },
         }
       );
