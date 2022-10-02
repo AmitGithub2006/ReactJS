@@ -8,7 +8,7 @@ import { Api } from "./components/Api";
 // import { Weather } from "./components/Weather";
 import { GitAPI } from "./components/GitAPI";
 import { GitData } from "./components/GitData";
-import { Covid } from "./components/Covid";
+import { Covid } from "./components/CovidFetch/Covid";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

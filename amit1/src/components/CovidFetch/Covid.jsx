@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./Covid.css";
 
 export function Covid() {
   const [posts, setPosts] = useState([]);
@@ -17,9 +18,9 @@ export function Covid() {
   }, []);
 
   useEffect(() => {
-      const afterFilterData = posts.filter((post) => {
-          if (post.state) {
-        return post.state.includes(search)
+    const afterFilterData = posts.filter((post) => {
+      if (post.state) {
+        return post.state.includes(search);
       }
     });
     setFilteredData(afterFilterData);
@@ -32,12 +33,21 @@ export function Covid() {
         <h1>CORONA VIRUS UPDATE</h1>
       </div>
       <input
-      id="input"
+        id="input"
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search Your State..."
       />
+      <button
+        className="active switchColor switchBtn"
+        onClick={() => {
+          document.body.classList.toggle("active");
+          document.querySelector(".switchColor").classList.toggle("active");
+        }}
+      >
+        Switch Theme
+      </button>
       <div className="details">
         {filteredData.map((post) => (
           <div className="main">
