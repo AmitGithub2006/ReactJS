@@ -4,12 +4,16 @@
     box-sizing: border-box;
 }
 
+.container {
+    padding: 50px 0;
+}
+
 .heading {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin-bottom: 20px;
     font-family: cursive;
 }
 
@@ -61,15 +65,11 @@
     font-size: 20px;
 }
 
-.active {
-    background-color: black;
-    color: white;
-}
-
 .switchBtn {
     position: sticky;
     padding: 5px;
     border-radius: 5px;
     font-size: 15px;
     margin-left: 1200px;
+    outline: none;
 }

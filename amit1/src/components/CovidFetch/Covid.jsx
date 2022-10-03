@@ -6,6 +6,10 @@ export function Covid() {
   const [posts, setPosts] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [search, setSearch] = useState("");
+  const [theme, setTheme] = useState({
+    color: "black",
+    backgroundColor: "white",
+  });
 
   useEffect(() => {
     async function getCovidData() {
@@ -26,8 +30,22 @@ export function Covid() {
     setFilteredData(afterFilterData);
   }, [search]);
 
+  const themeChange = () => {
+    if(theme.color === "black") {
+      setTheme({
+        color: "white",
+        backgroundColor: "black",
+      })
+    } else {
+      setTheme({
+        color: "black",
+        backgroundColor: "white",
+      })
+    }
+  }
+
   return (
-    <div className="container">
+    <div className="container" style={theme}>
       <div className="heading">
         <i className="fa-solid fa-virus-covid covidIcon"></i>
         <h1>CORONA VIRUS UPDATE</h1>
@@ -39,15 +57,7 @@ export function Covid() {
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search Your State..."
       />
-      <button
-        className="active switchColor switchBtn"
-        onClick={() => {
-          document.body.classList.toggle("active");
-          document.querySelector(".switchColor").classList.toggle("active");
-        }}
-      >
-        Switch Theme
-      </button>
+      <button className="switchBtn" onClick={themeChange}>Switch Theme</button>
       <div className="details">
         {filteredData.map((post) => (
           <div className="main">
