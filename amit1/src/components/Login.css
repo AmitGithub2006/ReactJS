@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    background-color: rgb(136, 135, 135);
+    height: 100vh;
+}
+
+.register, .login {
+    width: 50vw;
+    text-align: center;
+    border: 2px solid rgb(128, 94, 0);
+    margin: 50px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.register h1, .login h1 {
+    color: rgb(3, 56, 58);
+    margin-bottom: 30px;
+}
+
+#name, #email, #phone, #password, #registerBtn, #emailLogin, #passwordLogin, #loginBtn {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: brown;
+    font-weight: 600;
+}
+
+#registerBtn, #loginBtn {
+    color: rgb(119, 117, 117);
+    background-color: rgb(4, 44, 4);
+    cursor: pointer;
+}
+
+#afterRegister, #afterLogin {
+    color: rgb(85, 25, 25);
+}
+
+.userPage {
+    padding: 200px;
+    background-color: cadetblue;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.userHeading {
+    color: brown;
+    margin-bottom: 50px;
+}
+
+#logoutBtn {
+    padding: 10px;
+    width: 150px;
+    border: none;
+    outline: none;
+    color: crimson;
+    background-color: antiquewhite;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 0 auto;
+}

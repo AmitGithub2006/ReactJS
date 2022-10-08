@@ -9,6 +9,8 @@ import { Api } from "./components/Api";
 import { GitAPI } from "./components/GitAPI";
 import { GitData } from "./components/GitData";
 import { Covid } from "./components/CovidFetch/Covid";
+import Form from "./components/Form";
+import Login from "./components/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,7 +21,9 @@ root.render(
     {/* <Weather /> */}
     {/* <GitAPI /> */}
     {/* <GitData /> */}
-    <Covid />
+    {/* <Covid /> */}
+    {/* <Form /> */}
+    <Login />
   </React.StrictMode>
 );
 
