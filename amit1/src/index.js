@@ -11,6 +11,9 @@ import { GitData } from "./components/GitData";
 import { Covid } from "./components/CovidFetch/Covid";
 import Form from "./components/Form";
 import Login from "./components/Login";
+import Logout from "./components/Logout";
+import { BrowserRouter } from "react-router-dom";
+import LoginLogout from "./components/LoginLogout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,7 +26,11 @@ root.render(
     {/* <GitData /> */}
     {/* <Covid /> */}
     {/* <Form /> */}
-    <Login />
+    {/* <Login /> */}
+    {/* <Logout /> */}
+    <BrowserRouter>
+      <LoginLogout />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
